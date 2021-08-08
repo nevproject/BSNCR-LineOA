@@ -58,6 +58,8 @@ async function main() {
   if (liff.isInClient() && liff.getOS() === 'android') {
     btnScanCode.style.display = 'block';
   }
+
+  btnOpenWindow.style.display = "block"  
 }
 
 async function shareMsg() {
@@ -99,6 +101,13 @@ async function scanCode() {
   const result = await liff.scanCode();
   code.innerHTML = '<b>Code: </b>' + result.value;
 }
+
+btnOpenWindow.onclick = () => {
+  liff.openWindow({
+    url: window.location.href,
+    external: true
+  });
+};
 
 btnLogIn.onclick = () => {
   liff.login();
