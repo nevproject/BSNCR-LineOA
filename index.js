@@ -50,7 +50,6 @@ async function main() {
   } else {
     btnSend.style.display = 'block';
     getUserProfile();
-    btnLogOut.style.display = 'block';
   }
 }
 
