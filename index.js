@@ -49,6 +49,7 @@ async function main() {
     }
   } else {
     btnSend.style.display = 'block';
+    btnSend.style.display = "block"
     getUserProfile();
   }
 }
