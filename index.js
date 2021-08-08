@@ -37,8 +37,21 @@ async function main() {
       body.style.backgroundColor = '#eeeeee';
       break;
   }
-  //getuserinfo.
-  getUserProfile();
+
+  if (!liff.isInClient()) {
+    if (liff.isLoggedIn()) {
+      btnLogIn.style.display = 'none';
+      btnLogOut.style.display = 'block';
+      //getuserinfo.
+      getUserProfile();
+    } else {
+      btnLogIn.style.display = 'block';
+      btnLogOut.style.display = 'none';
+    }
+  } else {
+    //getuserinfo.
+    getUserProfile();
+  }
 }
 
 async function getUserProfile() {
@@ -48,7 +61,16 @@ async function getUserProfile() {
   statusMessage.innerHTML = '<b>statusMessage:</b> ' + profile.statusMessage;
   displayName.innerHTML = '<b>displayName:</b> ' + profile.displayName;
 
-  email.innerHTML = "<b>email:</b> " + liff.getDecodedIDToken().email;
+  email.innerHTML = '<b>email:</b> ' + liff.getDecodedIDToken().email;
 }
+
+btnLogIn.onclick = () => {
+  liff.login();
+};
+
+btnLogOut.onclick = () => {
+  liff.logout();
+  window.location.reload();
+};
 
 main();
