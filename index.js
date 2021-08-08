@@ -48,6 +48,7 @@ async function main() {
       btnLogOut.style.display = 'none';
     }
   } else {
+    btnSend.style.display = 'block';
     getUserProfile();
     btnLogOut.style.display = 'block';
   }
@@ -88,7 +89,7 @@ btnLogOut.onclick = () => {
 };
 
 btnSend.onclick = () => {
-  sendMsg()
-}
+  sendMsg();
+};
 
 main();
