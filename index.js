@@ -47,6 +47,8 @@ async function getUserProfile() {
   userId.innerHTML = '<b>userId:</b> ' + profile.userId;
   statusMessage.innerHTML = '<b>statusMessage:</b> ' + profile.statusMessage;
   displayName.innerHTML = '<b>displayName:</b> ' + profile.displayName;
+
+  email.innerHTML = "<b>email:</b> " + liff.getDecodedIDToken().email;
 }
 
 main();
