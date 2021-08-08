@@ -102,4 +102,8 @@ btnSend.onclick = () => {
   sendMsg();
 };
 
+btnShare.onclick = () => {
+  shareMsg()
+}
+
 main();
