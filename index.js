@@ -40,7 +40,7 @@ async function main() {
 
   if (!liff.isInClient()) {
     if (liff.isLoggedIn()) {
-      btnShare.style.display = "block"
+      btnShare.style.display = 'block';
       btnLogIn.style.display = 'none';
       btnLogOut.style.display = 'block';
       getUserProfile();
@@ -50,8 +50,8 @@ async function main() {
     }
   } else {
     btnSend.style.display = 'block';
-    btnSend.style.display = "block"
-    btnShare.style.display = "block"
+    btnSend.style.display = 'block';
+    btnShare.style.display = 'block';
     getUserProfile();
   }
 }
@@ -59,11 +59,11 @@ async function main() {
 async function shareMsg() {
   await liff.shareTargetPicker([
     {
-      type: "image",
-      originalContentUrl: "https://d.line-scdn.net/stf/line-lp/2016_en_02.jpg",
-      previewImageUrl: "https://d.line-scdn.net/stf/line-lp/2016_en_02.jpg"
+      type: 'image',
+      originalContentUrl: 'https://d.line-scdn.net/stf/line-lp/2016_en_02.jpg',
+      previewImageUrl: 'https://d.line-scdn.net/stf/line-lp/2016_en_02.jpg'
     }
-  ])
+  ]);
 }
 
 async function sendMsg() {
@@ -91,6 +91,11 @@ async function getUserProfile() {
   email.innerHTML = '<b>email:</b> ' + liff.getDecodedIDToken().email;
 }
 
+async function scanCode() {
+  const result = await liff.scanCode();
+  code.innerHTML = '<b>Code: </b>' + result.value;
+}
+
 btnLogIn.onclick = () => {
   liff.login();
 };
@@ -105,7 +110,11 @@ btnSend.onclick = () => {
 };
 
 btnShare.onclick = () => {
-  shareMsg()
+  shareMsg();
+};
+
+btnScanCode.onclick = () => {
+  scanCode()
 }
 
 main();
