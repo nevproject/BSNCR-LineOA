@@ -30,7 +30,7 @@ p {
   box-align: center;
   -moz-border-radius: 256px;
   -webkit-border-radius: 256px;
-  border-radius: 256px;
+  border-radius: 0px;
 }
 
 #accessToken, #utouId {
