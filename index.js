@@ -43,14 +43,14 @@ async function main() {
       btnLogIn.style.display = 'none';
       btnLogOut.style.display = 'block';
       //getuserinfo.
-      getUserProfile();
+      getUserProfile()
     } else {
       btnLogIn.style.display = 'block';
       btnLogOut.style.display = 'none';
     }
   } else {
     //getuserinfo.
-    getUserProfile();
+    getUserProfile()
   }
 }
 
