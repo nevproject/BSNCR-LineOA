@@ -72,7 +72,7 @@ async function shareMsg() {
   ]);
 }
 
-async function sendMsg() {
+/*async function sendMsg() {
   if (
     liff.getContext().type !== 'none' &&
     liff.getContext().type !== 'external'
@@ -85,7 +85,21 @@ async function sendMsg() {
     ]);
     alert('Message sent');
   }
+}*/
+
+async function sendMsg() {
+  if (liff.getContext().type !== "none") {
+    await liff.sendMessages([
+      {
+        "type": "text",
+        "text": "This message was sent by sendMessages()"
+      }
+    ])
+    liff.closeWindow()
+  }
 }
+
+
 
 async function getUserProfile() {
   const profile = await liff.getProfile();
@@ -101,6 +115,8 @@ async function scanCode() {
   const result = await liff.scanCode();
   code.innerHTML = '<b>Code: </b>' + result.value;
 }
+
+
 
 btnOpenWindow.onclick = () => {
   liff.openWindow({
