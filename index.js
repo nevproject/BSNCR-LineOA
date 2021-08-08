@@ -40,6 +40,7 @@ async function main() {
 
   if (!liff.isInClient()) {
     if (liff.isLoggedIn()) {
+      btnShare.style.display = "block"
       btnLogIn.style.display = 'none';
       btnLogOut.style.display = 'block';
       getUserProfile();
@@ -50,6 +51,7 @@ async function main() {
   } else {
     btnSend.style.display = 'block';
     btnSend.style.display = "block"
+    btnShare.style.display = "block"
     getUserProfile();
   }
 }
