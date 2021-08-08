@@ -54,6 +54,16 @@ async function main() {
   }
 }
 
+async function shareMsg() {
+  await liff.shareTargetPicker([
+    {
+      type: "image",
+      originalContentUrl: "https://d.line-scdn.net/stf/line-lp/2016_en_02.jpg",
+      previewImageUrl: "https://d.line-scdn.net/stf/line-lp/2016_en_02.jpg"
+    }
+  ])
+}
+
 async function sendMsg() {
   if (
     liff.getContext().type !== 'none' &&
