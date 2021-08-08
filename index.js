@@ -37,21 +37,8 @@ async function main() {
       body.style.backgroundColor = '#eeeeee';
       break;
   }
-
-  if (!liff.isInClient()) {
-    if (liff.isLoggedIn()) {
-      btnLogIn.style.display = 'none';
-      btnLogOut.style.display = 'block';
-      //getuserinfo.
-      getUserProfile()
-    } else {
-      btnLogIn.style.display = 'block';
-      btnLogOut.style.display = 'none';
-    }
-  } else {
-    //getuserinfo.
-    getUserProfile()
-  }
+  //getuserinfo.
+  getUserProfile();
 }
 
 async function getUserProfile() {
