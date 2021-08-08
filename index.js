@@ -43,7 +43,8 @@ async function main() {
       btnShare.style.display = 'block';
       btnLogIn.style.display = 'none';
       btnLogOut.style.display = 'block';
-      getUserProfile();
+      getUserProfile()
+      getFriendship()
     } else {
       btnLogIn.style.display = 'block';
       btnLogOut.style.display = 'none';
@@ -52,7 +53,8 @@ async function main() {
     btnSend.style.display = 'block';
     btnSend.style.display = 'block';
     btnShare.style.display = 'block';
-    getUserProfile();
+    getUserProfile()
+    getFriendship()
   }
 
   if (liff.isInClient() && liff.getOS() === 'android') {
