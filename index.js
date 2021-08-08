@@ -49,7 +49,7 @@ async function main() {
     }
   } else {
     getUserProfile();
-    
+    btnLogOut.style.display = 'block';
   }
 }
 
