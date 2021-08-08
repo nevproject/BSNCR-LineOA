@@ -53,6 +53,21 @@ async function main() {
   }
 }
 
+async function sendMsg() {
+  if (
+    liff.getContext().type !== 'none' &&
+    liff.getContext().type !== 'external'
+  ) {
+    await liff.sendMessages([
+      {
+        type: 'text',
+        text: 'This message was sent by sendMessages()'
+      }
+    ]);
+    alert('Message sent');
+  }
+}
+
 async function getUserProfile() {
   const profile = await liff.getProfile();
   pictureUrl.src = profile.pictureUrl;
@@ -71,5 +86,9 @@ btnLogOut.onclick = () => {
   liff.logout();
   window.location.reload();
 };
+
+btnSend.onclick = () => {
+  sendMsg()
+}
 
 main();
