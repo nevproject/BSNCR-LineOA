@@ -69,7 +69,7 @@ btnLogIn.onclick = () => {
 
 btnLogOut.onclick = () => {
   liff.logout();
-  //window.location.reload();
+  window.location.reload();
 };
 
 main();
